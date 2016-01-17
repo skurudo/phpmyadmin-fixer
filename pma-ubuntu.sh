@@ -129,7 +129,7 @@ MYSQL_PMA3
 
 #MYSQL DB and TABLES ADDITION
 echo "Download tables for our mysql server";
-wget --no-check-certificate https://erza.ru/downloads/pma/create_tables.sql;
+wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/create_tables.sql;
 mysql -uroot < create_tables.sql
 
 echo "Delete temp files";
