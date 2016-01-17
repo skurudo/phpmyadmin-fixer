@@ -24,7 +24,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - add in mysql pma user / and table phpmyadmin (if you have pma user or phpmyadmin table, script will delete those!);
 - download and add table for database phpmyadmin;
 - clean temp files and left pma.txt (there is password for pma@localhost) and old config;
-- 
+
 ##Changes:
 - some fixes in links;
 - fixes right for pma user, now only to phpmyadmin table;
