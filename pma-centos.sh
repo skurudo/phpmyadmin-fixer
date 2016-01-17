@@ -6,7 +6,7 @@ echo "............";
 echo "..........";
 echo ".........";
 echo "........";
-echo ".......";
+echo "......";
 
 echo "Install some software - wget and pwgen";
 yum install pwgen && yum install wget;
