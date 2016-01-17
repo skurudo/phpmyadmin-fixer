@@ -3,6 +3,7 @@ Fixes for phpmyadmin (configuration storage and some extended features)
 
 If you're tired from message - "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated", this patch for you ;-)
 
+
 ##Installation:
 __Ubuntu__
 
@@ -42,3 +43,5 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - added table pma__usergroups (for 4.x phpmyadmin);
 - sql dump on github now;
 - sh files on github too.
+
+##Tested on more than 50 different servers, support 3.x and 4.x version of phpmyadmin
