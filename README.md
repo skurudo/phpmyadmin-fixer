@@ -44,4 +44,5 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - sql dump on github now;
 - sh files on github too.
 
-##Tested on more than 50 different servers, support 3.x and 4.x version of phpmyadmin
+###Tested on more than 50 different servers
+###support 3.x and 4.x version of phpmyadmin
