@@ -6,7 +6,7 @@ echo "............";
 echo "..........";
 echo ".........";
 echo "........";
-echo ".......";
+echo "......";
 
 echo "Install some software - wget and pwgen";
 apt-get install pwgen && apt-get install wget;
