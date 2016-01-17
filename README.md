@@ -38,9 +38,6 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - clean temp files and left pma.txt (there is password for pma@localhost) and old config;
 
 ##Changes:
-- some fixes in links;
-- fixes right for pma user, now only to phpmyadmin table;
-- no delete for pma.txt - rewrite file now if you're run script second time;
 - options savedsearches / navigationhiding / users / usergroups are set (for 4.x phpmyadmin);
 - added table pma__usergroups (for 4.x phpmyadmin);
 - sql dump on github now;
