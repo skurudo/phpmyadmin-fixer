@@ -3,6 +3,22 @@ Fixes for phpmyadmin (configuration storage and some extended features)
 
 If you're tired from message - "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated", this patch for you ;-)
 
+##What did you get?
+- Tracking pages (version control MySQL table structure and data);
+- Bookmarks allow you to save predefined queries and execute them later;
+- You can show recently used tables in the navigation panel. It helps you to jump across table directly, without the need to select the database, and then select the table;
+- Triggers - code which is automatically executed in response to certain events.
+- Designer mode (visual display your tables and it's a graphical way of creating, editing, and displaying phpMyAdmin relations);
+- Relation support (allows relationships (similar to foreign keys) using MySQL-native (InnoDB) methods);
+- PDF schema (phpMyAdmin can produce PDF schema of your database);
+- You can store comments to describe each column for each table. These will then be shown on the “printview”;
+- phpMyAdmin can be configured to remember several things, column order, and column visibility from a database table) for browsing tables;
+- Since release 3.4.x phpMyAdmin allows users to set most preferences by themselves and store them in the database;
+- Since release 4.2.0 you can save and load query-by-example searches from the Database > Query panel;
+- Since release 4.5.0 you can save and load export templates;
+- no message about "storage is not completely configured";
+
+_(information source - phpMyAdmin FAQ page)_
 
 ##Installation:
 __Universal installer with OS Checker__
