@@ -1,4 +1,17 @@
 #!/bin/bash
+# 
+# phpmyadmin-fixer
+#
+# Fixes for phpmyadmin (configuration storage and some extended features)
+#
+# If you're tired from message - "The phpMyAdmin configuration storage 
+# is not completely configured, some extended features have been deactivated", 
+# this patch for you ;-)
+#
+#
+# https://github.com/skurudo/phpmyadmin-fixer
+# Author - Pavel Galkin (https://skurudo.ru)
+#
 echo "Phpmyadmin fixes for configuration storage and some  extended features";
 echo "................";
 echo "Let's do it";
