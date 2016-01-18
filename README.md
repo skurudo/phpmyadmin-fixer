@@ -5,6 +5,14 @@ If you're tired from message - "The phpMyAdmin configuration storage is not comp
 
 
 ##Installation:
+__Universal installer with OS Checker__
+curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh
+
+or
+
+sudo wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh
+
+##OS Installation:
 __Ubuntu__
 
 curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh
@@ -39,6 +47,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - clean temp files and left pma.txt (there is password for pma@localhost) and old config;
 
 ##Changes:
+- universal installer with os detector
 - options savedsearches / navigationhiding / users / usergroups are set (for 4.x phpmyadmin);
 - added table pma__usergroups (for 4.x phpmyadmin);
 - sql dump on github now;
