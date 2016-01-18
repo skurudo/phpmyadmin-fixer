@@ -48,7 +48,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin
 - clean temp files and left pma.txt (there is password for pma@localhost) and old config;
 
 ##Changes:
-- universal installer with os detector
+- universal installer with os detector by Sergey Rodin (VestaCP - https://vestacp.com)
 - options savedsearches / navigationhiding / users / usergroups are set (for 4.x phpmyadmin);
 - added table pma__usergroups (for 4.x phpmyadmin);
 - sql dump on github now;
