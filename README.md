@@ -6,6 +6,7 @@ If you're tired from message - "The phpMyAdmin configuration storage is not comp
 
 ##Installation:
 __Universal installer with OS Checker__
+
 curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh
 
 or
