@@ -32,7 +32,7 @@ or
 ##OS Installation:
 __Ubuntu__
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh `
+` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && chmod +x pma-ubuntu.sh && ./pma-ubuntu.sh `
 
 or
 
@@ -40,7 +40,7 @@ or
 
 __Debian__
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh `
+` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-debian.sh && chmod +x pma-debian.sh && ./pma-debian.sh `
 
 or		
 
