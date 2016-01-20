@@ -165,5 +165,5 @@ fi
 mysql -uroot < create_tables.sql
 
 echo "Delete temp files";
-rm create_tables.sql
+rm create_tables.sql*
 echo "pma@localhost user password = $PASS" > pma.txt
