@@ -12,6 +12,11 @@
 # https://github.com/skurudo/phpmyadmin-fixer
 # Author - Pavel Galkin (https://skurudo.ru)
 #
+# Code for check curl/wget 
+# by Serghey Rodin (https://vestacp.com) from (https://github.com/serghey-rodin/vesta/)
+#
+# ...
+#
 echo "Phpmyadmin fixes for configuration storage and some  extended features";
 echo "................";
 echo "Let's do it";
@@ -21,11 +26,8 @@ echo ".........";
 echo "........";
 echo "......";
 
-echo "Install some software - wget and pwgen";
-apt-get install pwgen && apt-get install wget;
-
 echo "Generate password for PMA (pma.txt)";
-PASS=`pwgen -s 10 1`
+PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -c 32 ; echo`
 echo "PMA Password = $PASS";
 
 #debian phpmyadmin path
@@ -143,6 +145,23 @@ MYSQL_PMA3
 #MYSQL DB and TABLES ADDITION
 echo "Download tables for our mysql server";
 wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/create_tables.sql;
+
+# Check wget
+if [ -e '/usr/bin/wget' ]; then
+    echo "Download via wget" &&
+    wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/create_tables.sql;
+    else
+        echo "Error: download via wget failed"
+fi
+
+# Check curl
+if [ -e '/usr/bin/curl' ]; then
+    echo "Download via curl" &&
+    curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/create_tables.sql;
+    else
+        echo "Error: download via curl failed."
+fi
+
 mysql -uroot < create_tables.sql
 
 echo "Delete temp files";

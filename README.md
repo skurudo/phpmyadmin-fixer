@@ -64,7 +64,9 @@ or
 - clean temp files, leftover pma.txt (contains password for pma@localhost) and old config;
 
 ##Changes:
-- universal installer with os detector by Sergey Rodin (VestaCP - https://vestacp.com)
+- we don't use pwgen for generation password anymore, no extra utilities;
+- check wget/curl before downloading dump for database;
+- universal installer with os detector by Sergey Rodin (VestaCP - https://vestacp.com);
 - options savedsearches / navigationhiding / users / usergroups are set (for 4.x phpmyadmin);
 - added table pma__usergroups (for 4.x phpmyadmin);
 - sql dump on github now;

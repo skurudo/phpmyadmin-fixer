@@ -38,7 +38,7 @@ if [ -e '/usr/bin/wget' ]; then
         bash pma-$type.sh $*
         exit
     else
-        echo "Error: pma-$type.sh download failed."
+        echo "Error: pma-$type.sh download via wget failed."
         exit 1
     fi
 fi
@@ -50,7 +50,7 @@ if [ -e '/usr/bin/curl' ]; then
         bash pma-$type.sh $*
         exit
     else
-        echo "Error: pma-$type.sh download failed."
+        echo "Error: pma-$type.sh download via curl failed."
         exit 1
     fi
 fi
