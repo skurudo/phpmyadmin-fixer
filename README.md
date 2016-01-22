@@ -56,7 +56,6 @@ or
 
 ##What the script does:
 - works from user root;
-- installs wget/pwgen (if this software was not installed before; it is used for download and password generation);
 - changes inside /etc/phpmyadmin/config.inc.php, fixes value;
 - makes a backup of /etc/phpmyadmin/config.inc.php in /root folder;
 - adds in a mysql pma user / and the table phpmyadmin (if the user "pma" or the table "phpmyadmin" already exists, the script will delete those!);
