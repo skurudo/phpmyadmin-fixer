@@ -27,12 +27,12 @@ __Universal installer with OS Checker__
 
 or
 
-` sudo wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
+` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
 
 ##OS Installation:
 __Ubuntu__
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && chmod +x pma-ubuntu.sh && ./pma-ubuntu.sh `
+` sudo curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && chmod +x pma-ubuntu.sh && ./pma-ubuntu.sh `
 
 or
 
@@ -63,6 +63,7 @@ or
 - clean temp files, leftover pma.txt (contains password for pma@localhost) and old config;
 
 ##Changes:
+- new tables and settings for favorite, usergroups, central_columns, designer_settings, export_templates;
 - we don't use pwgen for generation password anymore, no extra utilities;
 - check wget/curl before downloading dump for database;
 - universal installer with os detector by Sergey Rodin (VestaCP - https://vestacp.com);

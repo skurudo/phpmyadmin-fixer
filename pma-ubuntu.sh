@@ -58,6 +58,16 @@ sed -i '/savedsearches/d' $pmapath1
 sed -i '/navigationhiding/d' $pmapath1
 sed -i '/users/d' $pmapath1
 sed -i '/controlpass/d' $pmapath1
+sed -i '/favorite/d' $pmapath1
+sed -i '/usergroups/d' $pmapath1
+sed -i '/central_columns/d' $pmapath1
+sed -i '/designer_settings/d' $pmapath1
+sed -i '/export_templates/d' $pmapath1
+echo "\$cfg['Servers'][\$i]['favorite'] = 'pma__favorite';" >> $pmapath1
+echo "\$cfg['Servers'][\$i]['usergroups'] = 'pma__usergroups';" >> $pmapath1
+echo "\$cfg['Servers'][\$i]['central_columns'] = 'pma__central_columns';" >> $pmapath1
+echo "\$cfg['Servers'][\$i]['designer_settings'] = 'pma__designer_settings';" >> $pmapath1
+echo "\$cfg['Servers'][\$i]['export_templates'] = 'pma__export_templates';" >> $pmapath1
 echo "\$cfg['Servers'][\$i]['savedsearches'] = 'pma__savedsearches';" >> $pmapath1
 echo "\$cfg['Servers'][\$i]['navigationhiding'] = 'pma__navigationhiding';" >> $pmapath1
 echo "\$cfg['Servers'][\$i]['users'] = 'pma__users';" >> $pmapath1
@@ -97,6 +107,16 @@ sed -i '/savedsearches/d' $pmapath2
 sed -i '/navigationhiding/d' $pmapath2
 sed -i '/users/d' $pmapath2
 sed -i '/controlpass/d' $pmapath2
+sed -i '/favorite/d' $pmapath2
+sed -i '/usergroups/d' $pmapath2
+sed -i '/central_columns/d' $pmapath2
+sed -i '/designer_settings/d' $pmapath2
+sed -i '/export_templates/d' $pmapath2
+echo "\$cfg['Servers'][\$i]['favorite'] = 'pma__favorite';" >> $pmapath2
+echo "\$cfg['Servers'][\$i]['usergroups'] = 'pma__usergroups';" >> $pmapath2
+echo "\$cfg['Servers'][\$i]['central_columns'] = 'pma__central_columns';" >> $pmapath2
+echo "\$cfg['Servers'][\$i]['designer_settings'] = 'pma__designer_settings';" >> $pmapath2
+echo "\$cfg['Servers'][\$i]['export_templates'] = 'pma__export_templates';" >> $pmapath2
 echo "\$cfg['Servers'][\$i]['savedsearches'] = 'pma__savedsearches';" >> $pmapath2
 echo "\$cfg['Servers'][\$i]['navigationhiding'] = 'pma__navigationhiding';" >> $pmapath2
 echo "\$cfg['Servers'][\$i]['users'] = 'pma__users';" >> $pmapath2
