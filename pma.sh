@@ -346,12 +346,12 @@ grava_tabela_no_bando(){
 
 	#MYSQL DB and TABLES ADDITION
 	echo "Baixando tabelas para o mysql server";
-	wget --no-check-certificate https://raw.github.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+	wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
 
 	# Check wget
 	if [ -e '/usr/bin/wget' ]; then
 		echo "Download via wget" &&
-		wget --no-check-certificate https://raw.github.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+		wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
 	else
 		echo "Erro: não foi possivel baixar via wget"
 	fi
@@ -359,7 +359,7 @@ grava_tabela_no_bando(){
 	# Check curl
 	if [ -e '/usr/bin/curl' ]; then
 		echo "Download via curl" &&
-		curl -O -k https://raw.github.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+		curl -O -k https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
 	else
 		echo "Erro: não foi possivel baixar via curl."
 	fi
@@ -372,7 +372,7 @@ grava_tabela_no_bando(){
 }
 
 phpMyAdminFix(){
-	
+
 	am_i_root
 	boas_vindas
 	detecta_sistema

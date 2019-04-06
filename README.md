@@ -22,7 +22,7 @@ _(fonte da informação: página do FAQ do phpMyAdmin)
 ## Installation: __Instalador universal com o OS Checker__
 
 ```sh
-bash <(curl -s https://raw.github.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/pma.sh)
+bash <(curl -s https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/pma.sh)
 ```
 
 ## O que o script faz:
