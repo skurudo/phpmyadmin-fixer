@@ -62,9 +62,6 @@ centos_phpmyadmin_path(){
 	cp $pmapath1 /root/config.inc.php.old
 }
 
-grava_tabela_no_banco(){
-
-}
 
 phpmyadmin_config_ubuntu(){
 	debian_phpmyadmin_path
@@ -168,8 +165,6 @@ phpmyadmin_config_ubuntu(){
 	echo "\$cfg['Servers'][\$i]['table_coords'] = 'pma__table_coords';" >> $pmapath2
 	echo "\$cfg['Servers'][\$i]['pdf_pages'] = 'pma__pdf_pages';" >> $pmapath2
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath2
-
-	grava_tabela_no_banco
 }
 phpmyadmin_config_debian(){
 	debian_phpmyadmin_path
@@ -274,8 +269,6 @@ phpmyadmin_config_debian(){
 	echo "\$cfg['Servers'][\$i]['table_coords'] = 'pma__table_coords';" >> $pmapath2
 	echo "\$cfg['Servers'][\$i]['pdf_pages'] = 'pma__pdf_pages';" >> $pmapath2
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath2
-
-	grava_tabela_no_banco
 }
 phpmyadmin_config_centos(){
 	centos_phpmyadmin_path
@@ -329,8 +322,6 @@ phpmyadmin_config_centos(){
 	echo "\$cfg['Servers'][\$i]['table_coords'] = 'pma__table_coords';" >> $pmapath1
 	echo "\$cfg['Servers'][\$i]['pdf_pages'] = 'pma__pdf_pages';" >> $pmapath1
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath1
-
-	grava_tabela_no_banco
 }
 
 
