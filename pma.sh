@@ -32,6 +32,7 @@ detecta_sistema(){
 }
 
 boas_vindas(){
+	detecta_sistema
 	echo "phpMyAdmin Fixer: Corrige a configuração de armazenamento e de alguns recursos estendidos";
 	echo "O sistema detectado é: "$type;
 	echo "Vamos fazer isso";
@@ -44,7 +45,7 @@ boas_vindas(){
 
 gera_senha_randomica(){
 	echo "Gere uma senha para o PMA (pma.txt)";
-	PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -c 32 ; echo`
+	#PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w #${1:-32} | head -c 32 ; echo`
 	echo "Senha do PMA = $PASS";
 }
 
@@ -324,7 +325,9 @@ phpmyadmin_config_centos(){
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath1
 }
 
-
+#echo "Gere uma senha para o PMA (pma.txt)";
+PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -c 32 ; echo`
+#echo "Senha do PMA = $PASS";
 
 phpMyAdminFix(){
 
