@@ -406,8 +406,10 @@ else
 	echo "Erro: não foi possivel baixar via curl."
 fi
 
-mysql -uroot << create_tables.sql
+mysql -uroot < create_tables.sql
 
 echo "Removendo arquivos temporários";
 rm create_tables.sql*
 echo "pma@localhost user password = $PASS" > pma.txt
+
+exit
