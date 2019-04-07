@@ -63,6 +63,7 @@ centos_phpmyadmin_path(){
 }
 
 phpmyadmin_config_ubuntu(){
+	debian_phpmyadmin_path
 	#delete old and paste new value
 	sed -i '/pmadb/d' $pmapath1
 	sed -i '/controluser/d' $pmapath1
@@ -165,6 +166,8 @@ phpmyadmin_config_ubuntu(){
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath2
 }
 phpmyadmin_config_debian(){
+	debian_phpmyadmin_path
+
 	#delete old and paste new value
 	sed -i '/pmadb/d' $pmapath1
 	sed -i '/controluser/d' $pmapath1
@@ -267,6 +270,8 @@ phpmyadmin_config_debian(){
 	echo "\$cfg['Servers'][\$i]['designer_coords'] = 'pma__designer_coords';" >> $pmapath2
 }
 phpmyadmin_config_centos(){
+	centos_phpmyadmin_path
+
 	#delete old and paste new value
 	sed -i '/pmadb/d' $pmapath1
 	sed -i '/controluser/d' $pmapath1
