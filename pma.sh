@@ -63,56 +63,7 @@ centos_phpmyadmin_path(){
 }
 
 grava_tabela_no_banco(){
-	#SOME WORK with DATABASE (table / user)
-	PMADB=phpmyadmin
-	PMAUSER=pma
 
-	#DROP USER and TABLE
-	mysql -uroot << MYSQL_PMA1
-	DROP USER '$PMAUSER'@'localhost';
-	DROP DATABASE $PMADB;
-	FLUSH PRIVILEGES;
-	MYSQL_PMA1
-
-	#CREATE PMA USER
-	mysql -uroot << MYSQL_PMA2
-	CREATE USER '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
-	CREATE DATABASE $PMADB;
-	MYSQL_PMA2
-
-	#GRANT PMA USE SOME RIGHTS
-	mysql -uroot << MYSQL_PMA3
-	USE $PMADB;
-	GRANT USAGE ON $PMADB.* TO '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
-	GRANT ALL PRIVILEGES ON $PMADB.* TO '$PMAUSER'@'localhost';
-	FLUSH PRIVILEGES;
-	MYSQL_PMA3
-
-	#MYSQL DB and TABLES ADDITION
-	echo "Baixando tabelas para o mysql server";
-	wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
-
-	# Check wget
-	if [ -e '/usr/bin/wget' ]; then
-		echo "Download via wget" &&
-		wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
-	else
-		echo "Erro: não foi possivel baixar via wget"
-	fi
-
-	# Check curl
-	if [ -e '/usr/bin/curl' ]; then
-		echo "Download via curl" &&
-		curl -O -k https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
-	else
-		echo "Erro: não foi possivel baixar via curl."
-	fi
-
-	mysql -uroot < create_tables.sql
-
-	echo "Removendo arquivos temporários";
-	rm create_tables.sql*
-	echo "pma@localhost user password = $PASS" > pma.txt
 }
 
 phpmyadmin_config_ubuntu(){
@@ -409,3 +360,54 @@ phpMyAdminFix(){
 
 # Rodando o script
 phpMyAdminFix
+
+#SOME WORK with DATABASE (table / user)
+PMADB=phpmyadmin
+PMAUSER=pma
+
+#DROP USER and TABLE
+mysql -uroot <<MYSQL_PMA1
+DROP USER '$PMAUSER'@'localhost';
+DROP DATABASE $PMADB;
+FLUSH PRIVILEGES;
+MYSQL_PMA1
+
+#CREATE PMA USER
+mysql -uroot << MYSQL_PMA2
+CREATE USER '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
+CREATE DATABASE $PMADB;
+MYSQL_PMA2
+
+#GRANT PMA USE SOME RIGHTS
+mysql -uroot << MYSQL_PMA3
+USE $PMADB;
+GRANT USAGE ON $PMADB.* TO '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
+GRANT ALL PRIVILEGES ON $PMADB.* TO '$PMAUSER'@'localhost';
+FLUSH PRIVILEGES;
+MYSQL_PMA3
+
+#MYSQL DB and TABLES ADDITION
+echo "Baixando tabelas para o mysql server";
+wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+
+# Check wget
+if [ -e '/usr/bin/wget' ]; then
+	echo "Download via wget" &&
+	wget --no-check-certificate https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+else
+	echo "Erro: não foi possivel baixar via wget"
+fi
+
+# Check curl
+if [ -e '/usr/bin/curl' ]; then
+	echo "Download via curl" &&
+	curl -O -k https://raw.githubusercontent.com/luizjr/phpMyAdmin-Fixer-VestaCP/master/create_tables.sql;
+else
+	echo "Erro: não foi possivel baixar via curl."
+fi
+
+mysql -uroot << create_tables.sql
+
+echo "Removendo arquivos temporários";
+rm create_tables.sql*
+echo "pma@localhost user password = $PASS" > pma.txt
