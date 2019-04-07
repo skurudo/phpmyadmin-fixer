@@ -361,20 +361,20 @@ PMADB=phpmyadmin
 PMAUSER=pma
 
 #DROP USER and TABLE
-mysql -uroot <<MYSQL_PMA1
+mysql -u root -p <<MYSQL_PMA1
 DROP USER '$PMAUSER'@'localhost';
 DROP DATABASE $PMADB;
 FLUSH PRIVILEGES;
 MYSQL_PMA1
 
 #CREATE PMA USER
-mysql -uroot <<MYSQL_PMA2
+mysql -u root -p <<MYSQL_PMA2
 CREATE USER '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
 CREATE DATABASE $PMADB;
 MYSQL_PMA2
 
 #GRANT PMA USE SOME RIGHTS
-mysql -uroot <<MYSQL_PMA3
+mysql -u root -p <<MYSQL_PMA3
 USE $PMADB;
 GRANT USAGE ON $PMADB.* TO '$PMAUSER'@'localhost' IDENTIFIED BY '$PASS';
 GRANT ALL PRIVILEGES ON $PMADB.* TO '$PMAUSER'@'localhost';
@@ -401,7 +401,7 @@ else
 	echo "Erro: não foi possivel baixar via curl."
 fi
 
-mysql -uroot < create_tables.sql
+mysql -u root -p < create_tables.sql
 
 echo "Removendo arquivos temporários";
 rm create_tables.sql*
