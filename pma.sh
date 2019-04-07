@@ -327,7 +327,7 @@ phpmyadmin_config_centos(){
 
 #### Gerando uma senha randomica e deixando como global para todas as demais funções usarem.
 #echo "Gere uma senha para o PMA (pma.txt)";
-PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -c 32 ; echo`
+PASS=`tr -dc 'a-zA-Z0-9' < /dev/urandom | fold -w ${1:-32} | head -c 32 ; echo`
 #echo "Senha do PMA = $PASS";
 
 phpMyAdminFix(){
