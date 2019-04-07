@@ -355,7 +355,7 @@ phpMyAdminFix(){
 		phpmyadmin_config_ubuntu
 	fi
 
-	exit
+	#exit
 }
 
 # Rodando o script
