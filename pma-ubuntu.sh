@@ -27,7 +27,7 @@ echo "........";
 echo "......";
 
 echo "Generate password for PMA (pma.txt)";
-PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -c 32 ; echo`
+PASS=`tr -dc 'a-zA-Z0-9' < /dev/urandom | head -c 32 ; echo`
 echo "PMA Password = $PASS";
 
 #debian phpmyadmin path
