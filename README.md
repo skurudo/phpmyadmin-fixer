@@ -3,7 +3,7 @@ Fixes for phpmyadmin (configuration storage and some extended features)
 
 If you're tired of the message "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated", this patch for you ;-)
 
-##What do you get?
+## What do you get?
 - Tracking pages (version control MySQL table structure and data);
 - Bookmarks allow you to save predefined queries and execute them later;
 - You can show recently used tables in the navigation panel. It helps you jump across the table directly, without the need to select the database and the table;
@@ -20,7 +20,7 @@ If you're tired of the message "The phpMyAdmin configuration storage is not comp
 
 _(information source - phpMyAdmin FAQ page)_
 
-##Installation:
+## Installation:
 __Universal installer with OS Checker__
 
 ` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
@@ -29,7 +29,7 @@ or
 
 ` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
 
-##OS Installation:
+## OS Installation:
 __Ubuntu__
 
 ` sudo curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && sudo chmod +x pma-ubuntu.sh && sudo ./pma-ubuntu.sh `
@@ -54,7 +54,7 @@ or
 
 ` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh `
 
-##What the script does:
+## What the script does:
 - works from user root;
 - changes inside /etc/phpmyadmin/config.inc.php, fixes value;
 - makes a backup of /etc/phpmyadmin/config.inc.php in /root folder;
@@ -62,7 +62,7 @@ or
 - download and add table for database phpmyadmin;
 - clean temp files, leftover pma.txt (contains password for pma@localhost) and old config;
 
-##Changes:
+## Changes:
 - new tables and settings for favorite, usergroups, central_columns, designer_settings, export_templates;
 - we don't use pwgen for generation password anymore, no extra utilities;
 - check wget/curl before downloading dump for database;
@@ -72,5 +72,5 @@ or
 - sql dump on github now;
 - sh files on github too.
 
-####Tested on different servers: Debian 7/8, Ubuntu 12/14/15, CentOS 6/7
-####Support 3.x and 4.x version of phpmyadmin
+#### Tested on different servers: Debian 7/8/9, Ubuntu 12/14/15/16/19, CentOS 6/7
+#### Support 3.x and 4.x version of phpmyadmin
