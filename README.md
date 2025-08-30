@@ -83,8 +83,6 @@ curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma
 
 - **[English](README.md)** (current)
 - **[Русский](README.ru.md)** - Russian translation
-- **[Project Details](PROJECT.md)** - Technical project overview
-- **[Описание проекта](PROJECT.ru.md)** - Technical project overview in Russian
 
 ## 🤝 Contributing
 
