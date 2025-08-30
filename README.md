@@ -1,76 +1,108 @@
-# phpmyadmin-fixer
-Fixes for phpmyadmin (configuration storage and some extended features)
+# phpMyAdmin Fixer
 
-If you're tired of the message "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated", this patch for you ;-)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/github-skurudo%2Fphpmyadmin--fixer-blue.svg)](https://github.com/skurudo/phpmyadmin-fixer)
 
-## What do you get?
-- Tracking pages (version control MySQL table structure and data);
-- Bookmarks allow you to save predefined queries and execute them later;
-- You can show recently used tables in the navigation panel. It helps you jump across the table directly, without the need to select the database and the table;
-- Triggers - code which is automatically executed in response to certain events.
-- Designer mode (visually display your tables and a graphical way of creating, editing, and displaying phpMyAdmin relations);
-- Relation support (allows relationships (similar to foreign keys) using MySQL-native (InnoDB) methods);
-- PDF schema (phpMyAdmin can produce PDF schema of your database);
-- You can store comments to describe each column for each table. These will then be shown on the “printview”;
-- phpMyAdmin can be configured to remember several things, column order, and column visibility from a database table) for browsing tables;
-- Since release 3.4.x phpMyAdmin allows users to set most preferences by themselves and store them in the database;
-- Since release 4.2.0 you can save and load query-by-example searches from the Database > Query panel;
-- Since release 4.5.0 you can save and load export templates;
-- no message about "storage is not completely configured";
+**Fixes for phpMyAdmin (configuration storage and extended features)**
 
-_(information source - phpMyAdmin FAQ page)_
+If you're tired of the message "The phpMyAdmin configuration storage is not completely configured, some extended features have been deactivated", this patch is for you! 😊
 
-## Installation:
-__Universal installer with OS Checker__
+## 🌟 What you get
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
+- **Tracking pages** - Version control for MySQL table structure and data
+- **Bookmarks** - Save predefined queries and execute them later
+- **Recent tables** - Show recently used tables in the navigation panel for quick access
+- **Triggers** - Automatically executed code in response to certain events
+- **Designer mode** - Visual table display and graphical way of creating/editing phpMyAdmin relations
+- **Relation support** - Create relationships using MySQL-native (InnoDB) methods
+- **PDF schema** - Generate PDF schema of your database
+- **Column comments** - Store and display comments for each column in print view
+- **User preferences** - Remember column order, visibility, and other browsing preferences
+- **Query-by-example searches** - Save and load search queries from Database > Query panel
+- **Export templates** - Save and load export templates
+- **No more configuration warnings** - Eliminate the "storage is not completely configured" message
 
-or
+> *Information source: phpMyAdmin FAQ page*
 
-` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh `
+## 🚀 Quick Installation
 
-## OS Installation:
-__Ubuntu__
+### Universal Installer (Recommended)
+```bash
+curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh
+```
 
-` sudo curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && sudo chmod +x pma-ubuntu.sh && sudo ./pma-ubuntu.sh `
+Or using wget:
+```bash
+wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma.sh && chmod +x pma.sh && ./pma.sh
+```
 
-or
+## 🖥️ OS-Specific Installation
 
-` sudo wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && sudo chmod +x pma-ubuntu.sh && sudo ./pma-ubuntu.sh `
+### Ubuntu
+```bash
+sudo curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-ubuntu.sh && sudo chmod +x pma-ubuntu.sh && sudo ./pma-ubuntu.sh
+```
 
-__Debian__
+### Debian
+```bash
+curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-debian.sh && chmod +x pma-debian.sh && ./pma-debian.sh
+```
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-debian.sh && chmod +x pma-debian.sh && ./pma-debian.sh `
+### CentOS
+```bash
+curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh
+```
 
-or		
+## 🔧 What the script does
 
-` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-debian.sh && chmod +x pma-debian.sh && ./pma-debian.sh `
+- **Root access required** - Script runs with root privileges
+- **Configuration fix** - Updates `/etc/phpmyadmin/config.inc.php` with correct values
+- **Backup creation** - Creates backup of config file in `/root` folder
+- **Database setup** - Creates MySQL user `pma` and `phpmyadmin` database
+- **Table creation** - Downloads and installs required tables for phpMyAdmin
+- **Cleanup** - Removes temporary files and old configurations
 
-__CentOS__
+## 📋 Recent Changes
 
-` curl -O -k https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh `
+- ✅ New tables and settings for favorites, user groups, central columns, designer settings, export templates
+- ✅ Removed dependency on `pwgen` utility
+- ✅ Added wget/curl availability checks before downloading
+- ✅ Universal installer with OS detection by Sergey Rodin (VestaCP)
+- ✅ Enhanced options for saved searches, navigation hiding, users, and user groups (phpMyAdmin 4.x)
+- ✅ Added `pma__usergroups` table support (phpMyAdmin 4.x)
+- ✅ SQL dump and shell scripts now hosted on GitHub
 
-or
+## 🧪 Tested Environments
 
-` wget --no-check-certificate https://raw.githubusercontent.com/skurudo/phpmyadmin-fixer/master/pma-centos.sh && chmod +x pma-centos.sh && ./pma-centos.sh `
+- **Debian**: 7, 8, 9
+- **Ubuntu**: 12, 14, 15, 16, 19
+- **CentOS**: 6, 7
+- **phpMyAdmin**: 3.x and 4.x versions
 
-## What the script does:
-- works from user root;
-- changes inside /etc/phpmyadmin/config.inc.php, fixes value;
-- makes a backup of /etc/phpmyadmin/config.inc.php in /root folder;
-- adds in a mysql pma user / and the table phpmyadmin (if the user "pma" or the table "phpmyadmin" already exists, the script will delete those!);
-- download and add table for database phpmyadmin;
-- clean temp files, leftover pma.txt (contains password for pma@localhost) and old config;
+## 📚 Documentation
 
-## Changes:
-- new tables and settings for favorite, usergroups, central_columns, designer_settings, export_templates;
-- we don't use pwgen for generation password anymore, no extra utilities;
-- check wget/curl before downloading dump for database;
-- universal installer with os detector by Sergey Rodin (VestaCP - https://vestacp.com);
-- options savedsearches / navigationhiding / users / usergroups are set (for 4.x phpmyadmin);
-- added table pma__usergroups (for 4.x phpmyadmin);
-- sql dump on github now;
-- sh files on github too.
+- **[English](README.md)** (current)
+- **[Русский](README.ru.md)** - Russian translation
+- **[Project Details](PROJECT.md)** - Technical project overview
+- **[Описание проекта](PROJECT.ru.md)** - Technical project overview in Russian
 
-#### Tested on different servers: Debian 7/8/9, Ubuntu 12/14/15/16/19, CentOS 6/7
-#### Support 3.x and 4.x version of phpmyadmin
+## 🤝 Contributing
+
+Feel free to submit issues, feature requests, or pull requests to improve this project.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Pavel Galkin** - [skurudo.ru](https://skurudo.ru)
+
+## 🙏 Acknowledgments
+
+- **Sergey Rodin** - OS detection code from [VestaCP](https://vestacp.com)
+- phpMyAdmin development team for the excellent web interface
+
+---
+
+**⭐ Star this repository if it helped you!**
